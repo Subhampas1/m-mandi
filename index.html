@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Multilingual Mandi - Empowering India's local trade ecosystem with AI-powered multilingual marketplace, transparent pricing, and fair negotiation">
+    <meta name="keywords" content="Digital Mandi, Multilingual Marketplace, AI Trade, India, Viksit Bharat, Voice-First, Price Discovery">
+    <meta property="og:title" content="The Multilingual Mandi - Visualizing Viksit Bharat">
+    <meta property="og:description" content="A voice-first, multilingual digital marketplace powered by Generative AI">
+    <meta property="og:type" content="website">
+    <title>The Multilingual Mandi | Viksit Bharat through AI</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Screen 1: Landing Page -->
+    <section id="landing" class="screen active">
+        <div class="container">
+            <header class="landing-header">
+                <div class="logo">
+                    <span class="logo-icon">🛒</span>
+                    <h1>The Multilingual Mandi</h1>
+                </div>
+                <p class="tagline">Empowering India's local trade through AI</p>
+            </header>
+
+            <div class="hero-section">
+                <div class="hero-image">
+                    <img src="assets/hero-illustration.png" alt="Diverse Indian vendors and buyers using digital mandi with multilingual support">
+                </div>
+
+                <div class="hero-content">
+                    <h2>Visualizing a <span class="highlight">Viksit Bharat</span></h2>
+                    <p class="subtitle">Where linguistic diversity becomes economic strength</p>
+                </div>
+            </div>
+
+            <div class="problem-solution">
+                <div class="problem-card">
+                    <div class="card-icon">⚠️</div>
+                    <h3>The Problem</h3>
+                    <ul>
+                        <li>Language barriers across states</li>
+                        <li>Lack of transparent price discovery</li>
+                        <li>Power imbalance in negotiation</li>
+                        <li>Digital tools exclude low-literacy users</li>
+                    </ul>
+                </div>
+
+                <div class="arrow-separator">→</div>
+
+                <div class="solution-card">
+                    <div class="card-icon">✨</div>
+                    <h3>AI-Powered Solution</h3>
+                    <ul>
+                        <li>Trade in your own language</li>
+                        <li>Fair market prices instantly</li>
+                        <li>Negotiate with AI assistance</li>
+                        <li>Voice-first, accessible to all</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ai-features-preview">
+                <h3>How Generative AI Transforms Trade</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🗣️</div>
+                        <h4>Real-Time Translation</h4>
+                        <p>Speak in any Indian language, understood by all</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h4>Smart Price Discovery</h4>
+                        <p>AI suggests fair prices with clear explanations</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h4>Negotiation Assistant</h4>
+                        <p>Respectful, culturally aware deal-making</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="cta-button" onclick="navigateToScreen('language-select')">
+                <span class="mic-icon">🎤</span>
+                Enter the Digital Mandi
+            </button>
+        </div>
+    </section>
+
+    <!-- Screen 2: Language Selection -->
+    <section id="language-select" class="screen">
+        <div class="container">
+            <div class="screen-header">
+                <button class="back-button" onclick="navigateToScreen('landing')">← Back</button>
+                <h2>Choose Your Language</h2>
+                <p class="screen-subtitle">बोलिए अपनी भाषा में</p>
+            </div>
+
+            <div class="voice-prompt">
+                <button class="voice-button pulse" onclick="simulateVoiceInput()">
+                    <span class="mic-icon-large">🎤</span>
+                </button>
+                <p>Tap to speak or select below</p>
+            </div>
+
+            <div class="language-grid">
+                <button class="language-tile" onclick="selectLanguage('hindi')">
+                    <div class="language-script">हिंदी</div>
+                    <div class="language-name">Hindi</div>
+                </button>
+                <button class="language-tile" onclick="selectLanguage('english')">
+                    <div class="language-script">English</div>
+                    <div class="language-name">English</div>
+                </button>
+                <button class="language-tile" onclick="selectLanguage('tamil')">
+                    <div class="language-script">தமிழ்</div>
+                    <div class="language-name">Tamil</div>
+                </button>
+                <button class="language-tile" onclick="selectLanguage('bengali')">
+                    <div class="language-script">বাংলা</div>
+                    <div class="language-name">Bengali</div>
+                </button>
+                <button class="language-tile" onclick="selectLanguage('marathi')">
+                    <div class="language-script">मराठी</div>
+                    <div class="language-name">Marathi</div>
+                </button>
+                <button class="language-tile" onclick="selectLanguage('telugu')">
+                    <div class="language-script">తెలుగు</div>
+                    <div class="language-name">Telugu</div>
+                </button>
+            </div>
+
+            <div class="language-indicator" id="selected-language"></div>
+        </div>
+    </section>
+
+    <!-- Screen 3: Role Selection -->
+    <section id="role-select" class="screen">
+        <div class="container">
+            <div class="screen-header">
+                <button class="back-button" onclick="navigateToScreen('language-select')">← Back</button>
+                <h2>I am a...</h2>
+                <p class="screen-subtitle">आप क्या हैं?</p>
+            </div>
+
+            <div class="role-cards">
+                <div class="role-card" onclick="selectRole('vendor')">
+                    <div class="role-illustration">🧑‍🌾</div>
+                    <h3>Vendor</h3>
+                    <p>I want to <strong>sell</strong> my products</p>
+                    <ul class="role-features">
+                        <li>List commodities</li>
+                        <li>Get AI price suggestions</li>
+                        <li>Accept offers</li>
+                    </ul>
+                </div>
+
+                <div class="role-card" onclick="selectRole('buyer')">
+                    <div class="role-illustration">🧑‍💼</div>
+                    <h3>Buyer</h3>
+                    <p>I want to <strong>buy</strong> products</p>
+                    <ul class="role-features">
+                        <li>Browse mandi</li>
+                        <li>Compare prices</li>
+                        <li>Negotiate deals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 4: Vendor Dashboard -->
+    <section id="vendor-dashboard" class="screen">
+        <div class="container">
+            <div class="dashboard-header">
+                <button class="back-button" onclick="navigateToScreen('role-select')">← Back</button>
+                <div class="user-info">
+                    <span class="user-icon">🧑‍🌾</span>
+                    <div>
+                        <h3>Vendor Dashboard</h3>
+                        <p class="language-tag">🗣️ <span id="vendor-lang">Hindi</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vendor-main">
+                <div class="listing-section">
+                    <h3>List Your Commodity</h3>
+
+                    <div class="voice-input-section">
+                        <button class="voice-button-small pulse" onclick="simulateVendorVoice()">
+                            <span class="mic-icon">🎤</span>
+                        </button>
+                        <p>Speak to add item</p>
+                    </div>
+
+                    <div class="manual-input">
+                        <input type="text" id="commodity-name" placeholder="Commodity name (टमाटर, आलू...)" class="input-field">
+                        <input type="number" id="commodity-quantity" placeholder="Quantity (kg)" class="input-field">
+                        <input type="text" id="commodity-location" placeholder="Location" class="input-field">
+                        <button class="secondary-button" onclick="requestAIPrice()">Get AI Price Suggestion →</button>
+                    </div>
+                </div>
+
+                <div class="ai-price-section" id="ai-price-panel">
+                    <div class="ai-badge">✨ AI Powered</div>
+                    <h3>Smart Price Discovery</h3>
+
+                    <div class="price-visualization">
+                        <img src="assets/ai-price-discovery.png" alt="AI analyzing market data for fair price suggestion">
+                    </div>
+
+                    <div class="price-result">
+                        <div class="suggested-price">
+                            <span class="price-label">AI Suggested Price</span>
+                            <span class="price-value" id="suggested-price">₹45 - ₹52 / kg</span>
+                            <span class="confidence-badge">95% Confidence</span>
+                        </div>
+
+                        <div class="price-explanation" id="price-explanation">
+                            <h4>📊 Why this price?</h4>
+                            <div class="explanation-factors">
+                                <div class="factor">
+                                    <span class="factor-icon">📈</span>
+                                    <div>
+                                        <strong>Regional Average</strong>
+                                        <p>₹48/kg in Maharashtra</p>
+                                    </div>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-icon">🌦️</span>
+                                    <div>
+                                        <strong>Seasonal Demand</strong>
+                                        <p>High (Post-monsoon)</p>
+                                    </div>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-icon">⭐</span>
+                                    <div>
+                                        <strong>Quality Grade</strong>
+                                        <p>Premium (A-Grade)</p>
+                                    </div>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-icon">📊</span>
+                                    <div>
+                                        <strong>Market Trend</strong>
+                                        <p>Stable to rising</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="primary-button" onclick="listCommodity()">List at ₹50/kg</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-listings">
+                <h3>My Active Listings</h3>
+                <div class="listings-grid" id="vendor-listings">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 5: Buyer Marketplace -->
+    <section id="buyer-marketplace" class="screen">
+        <div class="container">
+            <div class="dashboard-header">
+                <button class="back-button" onclick="navigateToScreen('role-select')">← Back</button>
+                <div class="user-info">
+                    <span class="user-icon">🧑‍💼</span>
+                    <div>
+                        <h3>Digital Mandi Board</h3>
+                        <p class="language-tag">🗣️ <span id="buyer-lang">Tamil</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-section">
+                <div class="voice-search">
+                    <button class="voice-button-small pulse" onclick="simulateBuyerVoice()">
+                        <span class="mic-icon">🎤</span>
+                    </button>
+                </div>
+                <input type="text" placeholder="Search commodities... (வணக்கம்)" class="search-input">
+                <button class="filter-button">🔍 Filters</button>
+            </div>
+
+            <div class="mandi-board">
+                <h3>Available Today</h3>
+                <div class="commodities-grid" id="commodities-list">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 6: Negotiation Interface -->
+    <section id="negotiation" class="screen">
+        <div class="container">
+            <div class="negotiation-header">
+                <button class="back-button" onclick="navigateToScreen('buyer-marketplace')">← Back</button>
+                <h2>Negotiation in Progress</h2>
+                <div class="deal-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="deal-progress"></div>
+                    </div>
+                    <p>AI assisting your deal</p>
+                </div>
+            </div>
+
+            <div class="negotiation-visual">
+                <img src="assets/negotiation-demo.png" alt="Real-time multilingual negotiation with AI translation">
+            </div>
+
+            <div class="negotiation-split">
+                <div class="participant vendor-side">
+                    <div class="participant-header">
+                        <span class="participant-icon">🧑‍🌾</span>
+                        <div>
+                            <strong>Vendor</strong>
+                            <p class="lang-badge">🇮🇳 Hindi</p>
+                        </div>
+                    </div>
+                    <div class="chat-messages">
+                        <div class="message vendor-message">
+                            <p class="original-text">नमस्ते! क्या आप थोड़ा कम कर सकते हैं?</p>
+                            <p class="translation-hint">Hover for translation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-assistant-panel">
+                    <div class="ai-badge">🤖 AI Assistant</div>
+                    <div class="translation-flow">
+                        <div class="translation-arrow">⟲</div>
+                        <p>Real-time translation</p>
+                    </div>
+                    <div class="ai-suggestions">
+                        <h4>💡 Suggested Response</h4>
+                        <div class="suggestion-chip" onclick="acceptSuggestion(1)">
+                            ₹500 கம்? (₹500 okay?)
+                        </div>
+                        <div class="suggestion-chip" onclick="acceptSuggestion(2)">
+                            10% தள்ளுபடி? (10% discount?)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="participant buyer-side">
+                    <div class="participant-header">
+                        <span class="participant-icon">🧑‍💼</span>
+                        <div>
+                            <strong>Buyer</strong>
+                            <p class="lang-badge">🇮🇳 Tamil</p>
+                        </div>
+                    </div>
+                    <div class="chat-messages">
+                        <div class="message buyer-message">
+                            <p class="original-text">வணக்கம்! 10% தள்ளுபடி சாத்தியமா?</p>
+                            <p class="translation-hint">Hover for translation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="deal-summary">
+                <div class="deal-terms">
+                    <div class="term-item">
+                        <span class="term-label">Original Price:</span>
+                        <span class="term-value">₹550/kg</span>
+                    </div>
+                    <div class="term-item">
+                        <span class="term-label">Negotiated Price:</span>
+                        <span class="term-value highlight">₹500/kg</span>
+                    </div>
+                    <div class="term-item">
+                        <span class="term-label">Fair Trade Score:</span>
+                        <span class="term-value success">✅ 92/100</span>
+                    </div>
+                </div>
+                <button class="primary-button" onclick="finalizeDeal()">
+                    🤝 Finalize Deal
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 7: Impact & Vision -->
+    <section id="impact" class="screen">
+        <div class="container">
+            <div class="impact-hero">
+                <h2>Powering a <span class="highlight">Viksit Bharat</span></h2>
+                <p class="impact-subtitle">Through AI-Powered Inclusive Trade</p>
+            </div>
+
+            <div class="impact-visualization">
+                <img src="assets/impact-visualization.png" alt="Map of India showing connected digital mandis across states">
+            </div>
+
+            <div class="impact-metrics">
+                <h3>The Vision at Scale</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">22+</div>
+                        <div class="metric-label">Official Languages</div>
+                        <p>All voices heard, all markets connected</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">100%</div>
+                        <div class="metric-label">Price Transparency</div>
+                        <p>AI ensures fairness for every transaction</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">Millions</div>
+                        <div class="metric-label">Empowered Vendors</div>
+                        <p>Digital access without literacy barriers</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vision-statement">
+                <h3>🇮🇳 How This Builds Viksit Bharat</h3>
+                <div class="vision-cards">
+                    <div class="vision-card">
+                        <div class="vision-icon">🗣️</div>
+                        <h4>Linguistic Inclusion</h4>
+                        <p>Turning India's language diversity into economic strength through AI translation</p>
+                    </div>
+                    <div class="vision-card">
+                        <div class="vision-icon">⚖️</div>
+                        <h4>Economic Justice</h4>
+                        <p>Transparent pricing ends exploitative practices in local markets</p>
+                    </div>
+                    <div class="vision-card">
+                        <div class="vision-icon">📱</div>
+                        <h4>Digital Empowerment</h4>
+                        <p>Voice-first design includes low-literacy users in digital economy</p>
+                    </div>
+                    <div class="vision-card">
+                        <div class="vision-icon">🌾</div>
+                        <h4>Grassroots Growth</h4>
+                        <p>AI assists millions of small vendors to compete fairly</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-cta">
+                <h3>This is Generative AI for India</h3>
+                <p>Not replacing human connection, but enabling it across every language, every state, every mandi.</p>
+                <div class="cta-actions">
+                    <button class="primary-button" onclick="navigateToScreen('landing')">
+                        ↻ Experience Again
+                    </button>
+                    <button class="secondary-button" onclick="window.open('https://github.com', '_blank')">
+                        📚 Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>

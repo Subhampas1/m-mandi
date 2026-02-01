@@ -1,0 +1,8 @@
+{
+    "name": "New User Test",
+    "email": "newuser@example.com",
+    "password": "mypassword123",
+    "role": "buyer",
+    "preferredLanguage": "english",
+    "location": "Delhi, India"
+}
