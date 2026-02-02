@@ -38,6 +38,21 @@
 *Track all your active and completed deals.*
 ![Negotiation History](assets/negotiations_list.png)
 
+
+## Scope & Clarifications
+
+• This project demonstrates core UI/UX flows including language selection, vendor dashboard, marketplace browsing, and negotiation UI.
+
+• Real-time price suggestions are simulated for demo purposes; generative AI integration is conceptual at this stage.
+
+• Role-based flows (Vendor vs Buyer) are shown, with Vendor listing enabled accordingly.
+
+• Language preference is applied at key interaction points; future versions will extend full localization.
+
+• Authentication and production-grade backend logic are outside scope for this challenge demo.
+
+
+
 ## 🛠️ Tech Stack
 
 *   **Frontend**: React.js, Tailwind CSS, Vite
